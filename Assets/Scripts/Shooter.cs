@@ -7,7 +7,6 @@ public class Shooter : MonoBehaviour
     public Transform nextPoint;
     public float force = 10f;
 
-    private Vector2 startTouch;
     private Vector2 currentTouch;
 
     private int currentCandyIndex = 0;
@@ -15,6 +14,7 @@ public class Shooter : MonoBehaviour
     private GameObject currentCandy;
     private GameObject nextCandy;
 
+    private Vector2 shootDirection;
     void Start()
     {
         SpawnPreview();
@@ -25,9 +25,6 @@ public class Shooter : MonoBehaviour
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-                startTouch = touch.position;
 
             if (touch.phase == TouchPhase.Moved)
             {
@@ -41,9 +38,6 @@ public class Shooter : MonoBehaviour
                 Shoot();
             }
         }
-
-        if (Input.GetMouseButtonDown(0))
-            startTouch = Input.mousePosition;
 
         if (Input.GetMouseButton(0))
         {
@@ -62,13 +56,18 @@ public class Shooter : MonoBehaviour
     {
         if (currentCandy == null) return;
 
-        Vector2 direction = transform.up;
         GameObject bullet = currentCandy;
         bullet.transform.parent = null;
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        rb.linearVelocity = direction * force;
+        rb.useGravity = false;
+        rb.linearDamping = 0f;
+        rb.angularDamping = 0f;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.rotation = Quaternion.identity;
+        rb.linearVelocity = new Vector3(shootDirection.x, shootDirection.y, 0f) * force;
 
         currentCandyIndex++;
 
@@ -119,10 +118,10 @@ public class Shooter : MonoBehaviour
 
     void RotateShooter()
     {
-        Vector2 direction = (startTouch - currentTouch).normalized;
+        Vector3 shooterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        shootDirection = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
 }

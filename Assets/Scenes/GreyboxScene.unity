@@ -774,8 +774,8 @@ GameObject:
   - component: {fileID: 724319606}
   - component: {fileID: 724319605}
   - component: {fileID: 724319609}
-  - component: {fileID: 724319611}
   - component: {fileID: 724319610}
+  - component: {fileID: 724319611}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -871,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724319604}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.29, z: -0.63}
   m_LocalScale: {x: 0.7771194, y: 0.6585932, z: 0.7771194}
   m_ConstrainProportionsScale: 0
@@ -879,7 +879,7 @@ Transform:
   - {fileID: 1994714403}
   - {fileID: 325858878}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &724319609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,8 +983,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.31320763
+        time: 0.011074066
+        value: 0.15094566
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1746,7 +1746,7 @@ Transform:
   m_GameObject: {fileID: 1187931590}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.000000036668, y: -0, z: -0.018}
+  m_LocalPosition: {x: -0.000000036668, y: 0, z: 0.154}
   m_LocalScale: {x: 1.6152, y: 0.2649109, z: 1.6152}
   m_ConstrainProportionsScale: 0
   m_Children: []

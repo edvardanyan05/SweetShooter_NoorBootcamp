@@ -18,9 +18,6 @@ public class Trajectory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            startTouch = Input.mousePosition;
-
         if (Input.GetMouseButton(0))
         {
             currentTouch = Input.mousePosition;
@@ -33,14 +30,15 @@ public class Trajectory : MonoBehaviour
 
     void DrawLine()
     {
-        Vector2 dir = (startTouch - currentTouch).normalized;
+        Vector3 shooterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 dir = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
 
         lr.positionCount = pointsCount;
 
         for (int i = 0; i < pointsCount; i++)
         {
             float t = i * spaceBetweenPoints;
-            Vector3 pos = transform.position + (Vector3)(dir * force * t);
+            Vector3 pos = transform.position + new Vector3(dir.x, dir.y, 0f) * force * t;
 
             lr.SetPosition(i, pos);
         }
