@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PanelOpenButton : MonoBehaviour
 {
-    public GameObject panel;
+    [SerializeField] private PanelShower panel;
     public void ShowPanel()
     {
-        panel.SetActive(true);
+        panel.Show();
     }
 }
