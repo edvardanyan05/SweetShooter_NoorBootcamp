@@ -1,5 +1,5 @@
 using UnityEngine;
- 
+
 [RequireComponent(typeof(LineRenderer))]
 public class Trajectory : MonoBehaviour
 {
@@ -8,46 +8,62 @@ public class Trajectory : MonoBehaviour
     public float force = 10f;
     public float startWidth = 0.15f;
     public float endWidth = 0.05f;
- 
+
     private LineRenderer lr;
     private Vector2 currentTouch;
- 
+
     void Start()
     {
         lr = GetComponent<LineRenderer>();
- 
+
         Material mat = new Material(Shader.Find("Sprites/Default"));
         lr.material = mat;
- 
+
         lr.startColor = new Color(1f, 1f, 1f, 0.4f);
         lr.endColor = new Color(1f, 1f, 1f, 0f);
- 
+
         lr.startWidth = startWidth;
         lr.endWidth = endWidth;
     }
- 
+
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.touchCount > 0)
         {
-            currentTouch = Input.mousePosition;
-            DrawLine();
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+            {
+                currentTouch = touch.position;
+                DrawLine();
+            }
+
+            if (touch.phase == TouchPhase.Ended)
+                lr.positionCount = 0;
         }
- 
-        if (Input.GetMouseButtonUp(0))
-            lr.positionCount = 0;
+        else
+        {
+            if (Input.GetMouseButton(0))
+            {
+                currentTouch = Input.mousePosition;
+                DrawLine();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+                lr.positionCount = 0;
+        }
     }
- 
+
     void DrawLine()
     {
         lr.startWidth = startWidth;
         lr.endWidth = endWidth;
- 
+
         Vector3 shooterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
         Vector2 dir = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
- 
+
         lr.positionCount = pointsCount;
- 
+
         for (int i = 0; i < pointsCount; i++)
         {
             float t = i * spaceBetweenPoints;
@@ -56,4 +72,3 @@ public class Trajectory : MonoBehaviour
         }
     }
 }
- 

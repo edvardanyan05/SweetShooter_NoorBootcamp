@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 9029400795858806952}
   - component: {fileID: 6043099801176329925}
   - component: {fileID: -3665211341085127251}
+  - component: {fileID: 7452655310206140161}
   m_Layer: 0
   m_Name: YellowLongCandy
-  m_TagString: Untagged
+  m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7452655310206140161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886386734045721997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ad199f826407f4a94f925d14822a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandyBullet
 --- !u!1001 &8474680549884514978
 PrefabInstance:
   m_ObjectHideFlags: 0

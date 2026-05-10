@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4936585353799109689}
   - component: {fileID: -3889962224964205695}
   - component: {fileID: -6718687739322973752}
+  - component: {fileID: -7343146268789515771}
   m_Layer: 0
   m_Name: CylinderBlueCandy
-  m_TagString: Untagged
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &-7343146268789515771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941730926290316496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ad199f826407f4a94f925d14822a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandyBullet
 --- !u!1001 &2182392253488847236
 PrefabInstance:
   m_ObjectHideFlags: 0

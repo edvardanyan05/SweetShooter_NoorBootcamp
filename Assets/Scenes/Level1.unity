@@ -386,7 +386,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1592036550}
+      addedObject: {fileID: 1592036553}
   m_SourcePrefab: {fileID: 100100000, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
 --- !u!1 &48515312 stripped
 GameObject:
@@ -398,7 +398,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 690659573}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &48515314
+--- !u!114 &48515318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,20 +407,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 48515312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0
+  m_EditorClassIdentifier: '::'
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &73013371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
@@ -431,7 +423,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4936585353799109689, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
   m_PrefabInstance: {fileID: 358717477}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &73013373
+--- !u!114 &73013377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,20 +432,94 @@ MonoBehaviour:
   m_GameObject: {fileID: 73013371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.42
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: B
+--- !u!1 &113539294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113539296}
+  - component: {fileID: 113539295}
+  - component: {fileID: 113539297}
+  m_Layer: 0
+  m_Name: CandySplineManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &113539295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113539294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af04d2c484b13346998017bab63a756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandySplineManager
+  splineContainer: {fileID: 21266940}
+  candies:
+  - {fileID: 48515318}
+  - {fileID: 128257846}
+  - {fileID: 1446903571}
+  - {fileID: 871729634}
+  - {fileID: 476515310}
+  - {fileID: 290470458}
+  - {fileID: 1237826549}
+  - {fileID: 714949428}
+  - {fileID: 1049674600}
+  - {fileID: 1553153731}
+  - {fileID: 659747086}
+  - {fileID: 425983210}
+  - {fileID: 1532366215}
+  - {fileID: 1067570999}
+  - {fileID: 73013377}
+  - {fileID: 823761532}
+  - {fileID: 607427363}
+  - {fileID: 1592036553}
+  spacing: 0.03
+  moveSpeed: 0.005
+--- !u!4 &113539296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113539294}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &113539297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113539294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: 
 --- !u!1 &128257840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
@@ -464,7 +530,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9029400795858806952, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
   m_PrefabInstance: {fileID: 949547793}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &128257842
+--- !u!114 &128257846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -473,89 +539,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 128257840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.03
---- !u!1001 &146913344
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 202427014}
-    m_Modifications:
-    - target: {fileID: 6069959225252329061, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_Name
-      value: SweetShooterCannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8823742
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8823742
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8823742
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8001009
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.59986544
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -73.721
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: Y
 --- !u!1 &172228434
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 401496737}
+  - {fileID: 7314039871910625028}
   - {fileID: 1981630374}
   - {fileID: 902422752}
   - {fileID: 1087948963}
@@ -886,7 +875,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4936585353799109689, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
   m_PrefabInstance: {fileID: 1189574890}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &290470454
+--- !u!114 &290470458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -895,20 +884,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 290470452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.15
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: B
 --- !u!1001 &358717477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,13 +956,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 73013373}
+      addedObject: {fileID: 73013377}
   m_SourcePrefab: {fileID: 100100000, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
---- !u!4 &401496737 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7314039872049055556, guid: 2437f8168bd00c041b23c9f0c374be3d, type: 3}
-  m_PrefabInstance: {fileID: 146913344}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &425983204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
@@ -992,7 +968,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 1785533489}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &425983206
+--- !u!114 &425983210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1001,20 +977,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 425983204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.33
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1001 &429179954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1073,7 +1041,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1553153727}
+      addedObject: {fileID: 1553153731}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &468014456
 PrefabInstance:
@@ -1133,7 +1101,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1532366211}
+      addedObject: {fileID: 1532366215}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1 &476515304 stripped
 GameObject:
@@ -1145,7 +1113,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4936585353799109689, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
   m_PrefabInstance: {fileID: 1419119092}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &476515306
+--- !u!114 &476515310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1154,20 +1122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 476515304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.12
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: B
 --- !u!1 &607427357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
@@ -1178,7 +1138,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 1869832284}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &607427359
+--- !u!114 &607427363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1187,20 +1147,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 607427357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.48
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &659747080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
@@ -1211,7 +1163,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9029400795858806952, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
   m_PrefabInstance: {fileID: 1943276009}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &659747082
+--- !u!114 &659747086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1220,20 +1172,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 659747080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.3
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: Y
 --- !u!1001 &678108397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1292,7 +1236,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1049674596}
+      addedObject: {fileID: 1049674600}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &690659573
 PrefabInstance:
@@ -1352,7 +1296,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 48515314}
+      addedObject: {fileID: 48515318}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1 &714949422 stripped
 GameObject:
@@ -1364,7 +1308,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9029400795858806952, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
   m_PrefabInstance: {fileID: 715479373}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &714949424
+--- !u!114 &714949428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1373,20 +1317,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 714949422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.21
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: Y
 --- !u!1001 &715479373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1453,7 +1389,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 714949424}
+      addedObject: {fileID: 714949428}
   m_SourcePrefab: {fileID: 100100000, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
 --- !u!1 &823761526 stripped
 GameObject:
@@ -1465,7 +1401,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 2141313822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &823761528
+--- !u!114 &823761532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1474,20 +1410,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 823761526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.45
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &871729628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
@@ -1498,7 +1426,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 916166831}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &871729630
+--- !u!114 &871729634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1507,20 +1435,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 871729628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.09
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &902422751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1466,7 @@ Transform:
   m_GameObject: {fileID: 902422751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.318, z: -1.29}
+  m_LocalPosition: {x: 0, y: -0.318, z: -1.486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1610,7 +1530,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1446903567}
+      addedObject: {fileID: 1446903571}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &916166831
 PrefabInstance:
@@ -1670,7 +1590,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 871729630}
+      addedObject: {fileID: 871729634}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &949547793
 PrefabInstance:
@@ -1738,7 +1658,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 128257842}
+      addedObject: {fileID: 128257846}
   m_SourcePrefab: {fileID: 100100000, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
 --- !u!1 &974857548
 GameObject:
@@ -1887,7 +1807,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 678108397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1049674596
+--- !u!114 &1049674600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1896,20 +1816,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049674594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.24
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &1067570993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
@@ -1920,7 +1832,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4936585353799109689, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
   m_PrefabInstance: {fileID: 1868605768}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1067570995
+--- !u!114 &1067570999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1929,20 +1841,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067570993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.39
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: B
 --- !u!1 &1087948962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2027,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 290470454}
+      addedObject: {fileID: 290470458}
   m_SourcePrefab: {fileID: 100100000, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
 --- !u!1 &1237826543 stripped
 GameObject:
@@ -2135,7 +2039,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9029400795858806952, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
   m_PrefabInstance: {fileID: 2045613745}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237826545
+--- !u!114 &1237826549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2144,20 +2048,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237826543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.18
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: Y
 --- !u!1001 &1419119092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2224,7 +2120,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 476515306}
+      addedObject: {fileID: 476515310}
   m_SourcePrefab: {fileID: 100100000, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
 --- !u!1 &1446903565 stripped
 GameObject:
@@ -2236,7 +2132,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 913620992}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1446903567
+--- !u!114 &1446903571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2245,20 +2141,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446903565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.06
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &1532366209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
@@ -2269,7 +2157,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 468014456}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1532366211
+--- !u!114 &1532366215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2278,20 +2166,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1532366209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.36
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &1553153725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
@@ -2302,7 +2182,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670862790898176634, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
   m_PrefabInstance: {fileID: 429179954}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1553153727
+--- !u!114 &1553153731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2311,20 +2191,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1553153725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.27
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: R
 --- !u!1 &1592036548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
@@ -2335,7 +2207,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4936585353799109689, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
   m_PrefabInstance: {fileID: 41877641}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1592036550
+--- !u!114 &1592036553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2344,20 +2216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592036548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe70fa4cb34ef24291f430adeb222fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
-  m_Target: {fileID: 21266940}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 1
-  m_Duration: 31.416485
-  m_MaxSpeed: 0.1
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.51
+  m_EditorClassIdentifier: Assembly-CSharp::CandyOnSpline
+  position: 0
+  manager: {fileID: 0}
+  candyType: B
 --- !u!1001 &1785533489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2416,7 +2280,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 425983206}
+      addedObject: {fileID: 425983210}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &1868605768
 PrefabInstance:
@@ -2484,7 +2348,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 941730926290316496, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1067570995}
+      addedObject: {fileID: 1067570999}
   m_SourcePrefab: {fileID: 100100000, guid: 3e18bb0c72b343d4593010d337d80e6b, type: 3}
 --- !u!1001 &1869832284
 PrefabInstance:
@@ -2544,7 +2408,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 607427359}
+      addedObject: {fileID: 607427363}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
 --- !u!1001 &1943276009
 PrefabInstance:
@@ -2612,7 +2476,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 659747082}
+      addedObject: {fileID: 659747086}
   m_SourcePrefab: {fileID: 100100000, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
 --- !u!1 &1953767974
 GameObject:
@@ -3027,7 +2891,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2886386734045721997, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1237826545}
+      addedObject: {fileID: 1237826549}
   m_SourcePrefab: {fileID: 100100000, guid: 16732e60e5071b3458b6e2fca3e3515c, type: 3}
 --- !u!1001 &2141313822
 PrefabInstance:
@@ -3087,8 +2951,135 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9160670009480671025, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 823761528}
+      addedObject: {fileID: 823761532}
   m_SourcePrefab: {fileID: 100100000, guid: 24c13d8704f8ace429aad2465e2161e4, type: 3}
+--- !u!33 &1085045396526463720
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741031361396256759}
+  m_Mesh: {fileID: 369689273696691656, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+--- !u!23 &2948217576556138018
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741031361396256759}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -7116914304400416345, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  - {fileID: -8849801787700097654, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  - {fileID: 2672452821947103305, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  - {fileID: -6616039733983761900, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  - {fileID: -1362402942781197322, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  - {fileID: 3705758297088138841, guid: 27b54f6db2b547c4e8475dca149c4ec4, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3741031361396256759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4080543421736875341}
+  - component: {fileID: 1085045396526463720}
+  - component: {fileID: 2948217576556138018}
+  m_Layer: 0
+  m_Name: SweetShooterCannonVisuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4080543421736875341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741031361396256759}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.8050263, y: 1.2571538e-23, z: -1.7875176e-16, w: 0.5932391}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7314039871910625028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6069959225122262565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7314039871910625028}
+  m_Layer: 0
+  m_Name: SweetShooterCannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7314039871910625028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069959225122262565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.59986544, y: -0, z: -0, w: 0.8001009}
+  m_LocalPosition: {x: 0, y: 0.28, z: -0.31}
+  m_LocalScale: {x: 0.8823742, y: 0.8823742, z: 0.8823742}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4080543421736875341}
+  m_Father: {fileID: 202427014}
+  m_LocalEulerAnglesHint: {x: -73.721, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3099,4 +3090,5 @@ SceneRoots:
   - {fileID: 21266941}
   - {fileID: 1953767977}
   - {fileID: 17039600}
+  - {fileID: 113539296}
   - {fileID: 202427014}
