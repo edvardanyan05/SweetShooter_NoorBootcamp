@@ -1,44 +1,42 @@
 using UnityEngine;
-
+ 
 public class Shooter : MonoBehaviour
 {
     public GameObject[] candyPrefab;
     public Transform shootPoint;
     public Transform nextPoint;
     public float force = 10f;
-
+ 
     private Vector2 currentTouch;
-
     private int currentCandyIndex = 0;
-
     private GameObject currentCandy;
     private GameObject nextCandy;
-
-    private Vector2 shootDirection;
+ 
     void Start()
     {
         SpawnPreview();
     }
-
+ 
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
-                currentTouch = touch.position;
-                RotateShooter();
-            }
-
-            if (touch.phase == TouchPhase.Ended)
-            {
-                currentTouch = touch.position;
-                Shoot();
-            }
+            currentTouch = touch.position;
+            RotateShooter();
         }
 
+        if (touch.phase == TouchPhase.Ended)
+        {
+            currentTouch = touch.position;
+            Shoot();
+        }
+    }
+    else
+    {
         if (Input.GetMouseButton(0))
         {
             currentTouch = Input.mousePosition;
@@ -51,14 +49,17 @@ public class Shooter : MonoBehaviour
             Shoot();
         }
     }
-
+}
+ 
     void Shoot()
     {
         if (currentCandy == null) return;
-
+ 
         GameObject bullet = currentCandy;
+        Vector3 dir = new Vector3(transform.up.x, transform.up.y, 0f);
         bullet.transform.parent = null;
 
+        bullet.transform.position = shootPoint.position + dir * 0.5f;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.useGravity = false;
@@ -66,17 +67,18 @@ public class Shooter : MonoBehaviour
         rb.angularDamping = 0f;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        rb.rotation = Quaternion.identity;
-        rb.linearVelocity = new Vector3(shootDirection.x, shootDirection.y, 0f) * force;
-
+ 
+        
+        rb.linearVelocity = dir * force;
+ 
         currentCandyIndex++;
-
+ 
         if (nextCandy != null)
             Destroy(nextCandy);
-
+ 
         SpawnPreview();
     }
-
+ 
     void SpawnPreview()
     {
         if (currentCandyIndex < candyPrefab.Length)
@@ -87,7 +89,7 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 shootPoint
             );
-
+ 
             Rigidbody rb = currentCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
@@ -96,7 +98,7 @@ public class Shooter : MonoBehaviour
         {
             currentCandy = null;
         }
-
+ 
         if (currentCandyIndex + 1 < candyPrefab.Length)
         {
             nextCandy = Instantiate(
@@ -105,7 +107,7 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 nextPoint
             );
-
+ 
             Rigidbody rb = nextCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
@@ -115,12 +117,12 @@ public class Shooter : MonoBehaviour
             nextCandy = null;
         }
     }
-
+ 
     void RotateShooter()
     {
         Vector3 shooterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        shootDirection = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
-
+        Vector2 shootDirection = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
+ 
         float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
