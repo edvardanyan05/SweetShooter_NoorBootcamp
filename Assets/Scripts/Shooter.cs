@@ -1,32 +1,48 @@
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.EventSystems;
+ 
 public class Shooter : MonoBehaviour
 {
     public GameObject[] candyPrefab;
     public Transform shootPoint;
     public Transform nextPoint;
     public float force = 10f;
-
+ 
     private Vector2 currentTouch;
-
     private int currentCandyIndex = 0;
-
     private GameObject currentCandy;
     private GameObject nextCandy;
-
-    private Vector2 shootDirection;
+    private bool isReady = false;
+ 
     void Start()
     {
+        UIState.IsUIOpen = false;
+        Input.simulateMouseWithTouches = false;
         SpawnPreview();
+        StartCoroutine(EnableInputNextFrame());
     }
 
+    IEnumerator EnableInputNextFrame()
+    {
+        yield return null;
+        yield return null;
+        isReady = true;
+    }
+ 
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (!isReady) return;
+        if (UIState.IsUIOpen) return;
+
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Moved)
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
+
+            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
                 currentTouch = touch.position;
                 RotateShooter();
@@ -38,27 +54,34 @@ public class Shooter : MonoBehaviour
                 Shoot();
             }
         }
-
-        if (Input.GetMouseButton(0))
+        else
         {
-            currentTouch = Input.mousePosition;
-            RotateShooter();
-        }
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            currentTouch = Input.mousePosition;
-            Shoot();
+            if (Input.GetMouseButton(0))
+            {
+                currentTouch = Input.mousePosition;
+                RotateShooter();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentTouch = Input.mousePosition;
+                Shoot();
+            }
         }
     }
-
+ 
     void Shoot()
     {
         if (currentCandy == null) return;
-
+ 
         GameObject bullet = currentCandy;
+        Vector3 dir = new Vector3(transform.up.x, transform.up.y, 0f);
         bullet.transform.parent = null;
 
+        bullet.transform.position = shootPoint.position + dir * 0.5f;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.useGravity = false;
@@ -66,17 +89,18 @@ public class Shooter : MonoBehaviour
         rb.angularDamping = 0f;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        rb.rotation = Quaternion.identity;
-        rb.linearVelocity = new Vector3(shootDirection.x, shootDirection.y, 0f) * force;
-
+ 
+        
+        rb.linearVelocity = dir * force;
+ 
         currentCandyIndex++;
-
+ 
         if (nextCandy != null)
             Destroy(nextCandy);
-
+ 
         SpawnPreview();
     }
-
+ 
     void SpawnPreview()
     {
         if (currentCandyIndex < candyPrefab.Length)
@@ -87,7 +111,7 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 shootPoint
             );
-
+ 
             Rigidbody rb = currentCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
@@ -95,8 +119,10 @@ public class Shooter : MonoBehaviour
         else
         {
             currentCandy = null;
-        }
+            StartCoroutine(CheckLoseDelayed());
 
+        }
+ 
         if (currentCandyIndex + 1 < candyPrefab.Length)
         {
             nextCandy = Instantiate(
@@ -105,7 +131,7 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 nextPoint
             );
-
+ 
             Rigidbody rb = nextCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
@@ -116,11 +142,19 @@ public class Shooter : MonoBehaviour
         }
     }
 
+    IEnumerator CheckLoseDelayed()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (CandySplineManager.Instance.HasCandies())
+            Debug.Log("Lose!");
+    }
+ 
     void RotateShooter()
     {
         Vector3 shooterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        shootDirection = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
-
+        Vector2 shootDirection = ((Vector2)currentTouch - (Vector2)shooterScreenPos).normalized;
+ 
         float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
