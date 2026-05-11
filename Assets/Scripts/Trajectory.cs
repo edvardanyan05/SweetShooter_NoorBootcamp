@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Trajectory : MonoBehaviour
@@ -14,6 +15,7 @@ public class Trajectory : MonoBehaviour
 
     void Start()
     {
+        UIState.IsUIOpen = false;
         lr = GetComponent<LineRenderer>();
 
         Material mat = new Material(Shader.Find("Sprites/Default"));
@@ -28,10 +30,14 @@ public class Trajectory : MonoBehaviour
 
     void Update()
     {
+        if (UIState.IsUIOpen) return;
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
             if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
                 currentTouch = touch.position;
@@ -43,6 +49,8 @@ public class Trajectory : MonoBehaviour
         }
         else
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             if (Input.GetMouseButton(0))
             {
                 currentTouch = Input.mousePosition;

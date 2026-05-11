@@ -80,6 +80,12 @@ public class CandySplineManager : MonoBehaviour
             candies.RemoveAt(i);
         }
 
+        if(candies.Count == 0)
+        {
+            Debug.Log("Win!");
+            return;
+        }
+
         Sequence seq = DOTween.Sequence();
 
         for (int i = left; i < candies.Count; i++)
@@ -101,4 +107,6 @@ public class CandySplineManager : MonoBehaviour
         int checkIndex = left;
         seq.OnComplete(() => CheckAndExplode(checkIndex));
     }
+
+    public bool HasCandies() => candies.Count > 0;
 }

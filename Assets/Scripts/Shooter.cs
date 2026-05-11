@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.EventSystems;
  
 public class Shooter : MonoBehaviour
 {
@@ -11,45 +13,65 @@ public class Shooter : MonoBehaviour
     private int currentCandyIndex = 0;
     private GameObject currentCandy;
     private GameObject nextCandy;
+    private bool isReady = false;
  
     void Start()
     {
+        UIState.IsUIOpen = false;
+        Input.simulateMouseWithTouches = false;
         SpawnPreview();
+        StartCoroutine(EnableInputNextFrame());
+    }
+
+    IEnumerator EnableInputNextFrame()
+    {
+        yield return null;
+        yield return null;
+        isReady = true;
     }
  
     void Update()
     {
+        if (!isReady) return;
+        if (UIState.IsUIOpen) return;
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
+
             if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
-            currentTouch = touch.position;
-            RotateShooter();
-        }
+                currentTouch = touch.position;
+                RotateShooter();
+            }
 
-        if (touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended)
+            {
+                currentTouch = touch.position;
+                Shoot();
+            }
+        }
+        else
         {
-            currentTouch = touch.position;
-            Shoot();
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (Input.GetMouseButton(0))
+            {
+                currentTouch = Input.mousePosition;
+                RotateShooter();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentTouch = Input.mousePosition;
+                Shoot();
+            }
         }
     }
-    else
-    {
-        if (Input.GetMouseButton(0))
-        {
-            currentTouch = Input.mousePosition;
-            RotateShooter();
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            currentTouch = Input.mousePosition;
-            Shoot();
-        }
-    }
-}
  
     void Shoot()
     {
@@ -97,6 +119,8 @@ public class Shooter : MonoBehaviour
         else
         {
             currentCandy = null;
+            StartCoroutine(CheckLoseDelayed());
+
         }
  
         if (currentCandyIndex + 1 < candyPrefab.Length)
@@ -116,6 +140,14 @@ public class Shooter : MonoBehaviour
         {
             nextCandy = null;
         }
+    }
+
+    IEnumerator CheckLoseDelayed()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (CandySplineManager.Instance.HasCandies())
+            Debug.Log("Lose!");
     }
  
     void RotateShooter()
