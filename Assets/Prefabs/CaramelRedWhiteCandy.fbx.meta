@@ -3,7 +3,17 @@ guid: 257f30460276d814baf65230903bc139
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaramelCandyRedDelight
+    second: {fileID: 2100000, guid: c603ea006ae6acb4080c5b7c47ca1dce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaramelCandyWhiteFill
+    second: {fileID: 2100000, guid: 74165d77f092b584390fcc05e2152c64, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
