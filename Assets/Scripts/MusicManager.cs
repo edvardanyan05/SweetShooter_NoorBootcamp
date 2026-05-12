@@ -6,8 +6,9 @@ public class MusicManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource effectSource;
     public AudioClip mainMusic;
-    //public AudioClip winMusic;
-    //public AudioClip loseMusic;
+    public AudioClip winMusic;
+    public AudioClip loseMusic;
+    public AudioClip popMusic;
     public float musicVolume = 1f;
 
     public bool musicOn = true;
@@ -59,19 +60,19 @@ public class MusicManager : MonoBehaviour
         return musicOn;
     }
 
-    // public void PlayWin()
-    // {
-    //     musicSource.Stop();
-    //     if (musicOn)
-    //         effectSource.PlayOneShot(winMusic);
-    // }
+    public void PlayWin()
+    {
+        musicSource.Stop();
+        if (musicOn)
+            effectSource.PlayOneShot(winMusic);
+    }
 
-    // public void PlayLose()
-    // {
-    //     musicSource.Stop();
-    //     if (musicOn)
-    //         effectSource.PlayOneShot(loseMusic);
-    // }
+    public void PlayLose()
+    {
+        musicSource.Stop();
+        if (musicOn)
+            effectSource.PlayOneShot(loseMusic);
+    }
 
     public void PlayMainMusic()
     {
@@ -80,6 +81,12 @@ public class MusicManager : MonoBehaviour
         musicSource.loop = true;
         if (musicOn)
             musicSource.Play();
+    }
+
+    public void PlayPop()
+    {
+        if (musicOn)
+            effectSource.PlayOneShot(popMusic);
     }
 
     public void SetVolume(float volume)

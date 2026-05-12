@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 76894739}
   - component: {fileID: 76894738}
   - component: {fileID: 76894741}
+  - component: {fileID: 76894742}
   m_Layer: 5
   m_Name: FourthLevel
   m_TagString: Untagged
@@ -443,6 +444,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 76894742}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &76894739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +506,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &76894742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76894736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &77583054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1076,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 277478043}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &277478040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,12 +1148,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 277478037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 44.91, y: -27.21}
-  m_UseGraphicAlpha: 1
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &361978437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1162,6 @@ GameObject:
   - component: {fileID: 361978438}
   - component: {fileID: 361978440}
   - component: {fileID: 361978439}
-  - component: {fileID: 361978441}
   m_Layer: 5
   m_Name: StartBase
   m_TagString: Untagged
@@ -1153,7 +1186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75.1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &361978439
@@ -1191,21 +1224,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361978437}
   m_CullTransparentMesh: 1
---- !u!114 &361978441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361978437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!1 &449699068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1460,7 @@ GameObject:
   - component: {fileID: 539434534}
   - component: {fileID: 539434533}
   - component: {fileID: 539434536}
+  - component: {fileID: 539434537}
   m_Layer: 5
   m_Name: SixthLevel
   m_TagString: Untagged
@@ -1526,6 +1545,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 539434537}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &539434534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,6 +1607,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &539434537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539434531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &548786961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1989,7 @@ GameObject:
   - component: {fileID: 652666891}
   - component: {fileID: 652666890}
   - component: {fileID: 652666893}
+  - component: {fileID: 652666894}
   m_Layer: 5
   m_Name: ThirdLevel
   m_TagString: Untagged
@@ -2030,6 +2074,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 652666894}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &652666891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,6 +2136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &652666894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652666888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &669368801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,6 +3077,7 @@ GameObject:
   - component: {fileID: 1222312090}
   - component: {fileID: 1222312089}
   - component: {fileID: 1222312092}
+  - component: {fileID: 1222312093}
   m_Layer: 5
   m_Name: SecondLevel
   m_TagString: Untagged
@@ -3093,6 +3162,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1222312093}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1222312090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3143,6 +3224,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1222312093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222312087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1293551269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,6 +3323,7 @@ GameObject:
   - component: {fileID: 1332347421}
   - component: {fileID: 1332347420}
   - component: {fileID: 1332347419}
+  - component: {fileID: 1332347422}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -3300,7 +3394,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1332347420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1332347422}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1332347420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3339,6 +3445,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332347416}
   m_CullTransparentMesh: 1
+--- !u!114 &1332347422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332347416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1346761955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,6 +3696,7 @@ GameObject:
   - component: {fileID: 1598082260}
   - component: {fileID: 1598082259}
   - component: {fileID: 1598082262}
+  - component: {fileID: 1598082263}
   m_Layer: 5
   m_Name: SeventhLevel
   m_TagString: Untagged
@@ -3662,6 +3781,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1598082263}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1598082260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3712,6 +3843,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1598082263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598082257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1604552017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,6 +4019,7 @@ GameObject:
   - component: {fileID: 1673958364}
   - component: {fileID: 1673958363}
   - component: {fileID: 1673958366}
+  - component: {fileID: 1673958367}
   m_Layer: 5
   m_Name: FifthLevel
   m_TagString: Untagged
@@ -3960,6 +4104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1673958367}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1673958364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4010,6 +4166,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1673958367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673958361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1684918812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,6 +4191,7 @@ GameObject:
   - component: {fileID: 1684918815}
   - component: {fileID: 1684918814}
   - component: {fileID: 1684918817}
+  - component: {fileID: 1684918818}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -4105,6 +4274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1684918818}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1684918815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4156,6 +4337,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   panel: {fileID: 2091226996}
+--- !u!114 &1684918818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684918812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1712504041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,6 +4362,7 @@ GameObject:
   - component: {fileID: 1712504044}
   - component: {fileID: 1712504043}
   - component: {fileID: 1712504046}
+  - component: {fileID: 1712504047}
   m_Layer: 5
   m_Name: NinthLevel
   m_TagString: Untagged
@@ -4253,6 +4447,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1712504047}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1712504044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,6 +4509,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1712504047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712504041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1727056779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,6 +4606,7 @@ GameObject:
   - component: {fileID: 1729499285}
   - component: {fileID: 1729499284}
   - component: {fileID: 1729499287}
+  - component: {fileID: 1729499288}
   m_Layer: 5
   m_Name: FirstLevel
   m_TagString: Untagged
@@ -4472,6 +4691,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1729499288}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1729499285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4522,6 +4753,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1729499288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729499282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1735295601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,6 +4936,7 @@ GameObject:
   - component: {fileID: 1837347373}
   - component: {fileID: 1837347372}
   - component: {fileID: 1837347375}
+  - component: {fileID: 1837347376}
   m_Layer: 5
   m_Name: EighthLevel
   m_TagString: Untagged
@@ -4777,6 +5021,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1837347376}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1837347373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4827,6 +5083,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52468751cc8776d44ae1221eca98033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchLevels
+--- !u!114 &1837347376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837347370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &1839138032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,6 +5562,7 @@ GameObject:
   - component: {fileID: 2022126931}
   - component: {fileID: 2022126930}
   - component: {fileID: 2022126929}
+  - component: {fileID: 2022126932}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -5364,7 +5633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2022126930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022126932}
+        m_TargetAssemblyTypeName: PopSound, Assembly-CSharp
+        m_MethodName: Pop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2022126930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5403,6 +5684,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022126926}
   m_CullTransparentMesh: 1
+--- !u!114 &2022126932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022126926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c8eb8ba3b5e094cbdccc34ca01c92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopSound
 --- !u!1 &2051285953
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,7 +5707,6 @@ GameObject:
   - component: {fileID: 2051285954}
   - component: {fileID: 2051285956}
   - component: {fileID: 2051285955}
-  - component: {fileID: 2051285957}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -5479,21 +5771,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051285953}
   m_CullTransparentMesh: 1
---- !u!114 &2051285957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051285953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 17.2, y: -12.8}
-  m_UseGraphicAlpha: 1
 --- !u!1 &2076828157
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,8 +5861,6 @@ GameObject:
   - component: {fileID: 2082744864}
   - component: {fileID: 2082744866}
   - component: {fileID: 2082744865}
-  - component: {fileID: 2082744868}
-  - component: {fileID: 2082744867}
   m_Layer: 5
   m_Name: LevelsTxt
   m_TagString: Untagged
@@ -5654,36 +5929,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082744863}
   m_CullTransparentMesh: 1
---- !u!114 &2082744867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082744863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
---- !u!114 &2082744868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082744863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
-  m_EffectColor: {r: 0.8415094, g: 0.6081096, b: 0.8410868, a: 0.5}
-  m_EffectDistance: {x: 8.66, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!1 &2091226992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,7 +6172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   musicSource: {fileID: 2109359305}
   effectSource: {fileID: 2109359303}
-  mainMusic: {fileID: 8300000, guid: 4482bb2a4172f14438357b6f6bc19dca, type: 3}
+  mainMusic: {fileID: 8300000, guid: 3fb0b6a20d85d5d479b22a15ac36b473, type: 3}
+  winMusic: {fileID: 8300000, guid: 95a404de1f68ea54b84df02a305c9c26, type: 3}
+  loseMusic: {fileID: 8300000, guid: 89c1875b08296c84591cbc58dac5830a, type: 3}
+  popMusic: {fileID: 8300000, guid: 8e39a43bfc37bc24f8707ff539f3487d, type: 3}
   musicVolume: 1
   musicOn: 1
 --- !u!82 &2109359305
@@ -5941,7 +6189,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4482bb2a4172f14438357b6f6bc19dca, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3fb0b6a20d85d5d479b22a15ac36b473, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

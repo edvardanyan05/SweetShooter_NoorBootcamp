@@ -18,11 +18,6 @@ public class Trajectory : MonoBehaviour
         UIState.IsUIOpen = false;
         lr = GetComponent<LineRenderer>();
 
-        Material mat = new Material(Shader.Find("Sprites/Default"));
-        lr.material = mat;
-
-        lr.startColor = new Color(1f, 1f, 1f, 0.4f);
-        lr.endColor = new Color(1f, 1f, 1f, 0f);
 
         lr.startWidth = startWidth;
         lr.endWidth = endWidth;

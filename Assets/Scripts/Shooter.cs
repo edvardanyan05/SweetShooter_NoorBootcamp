@@ -8,7 +8,7 @@ public class Shooter : MonoBehaviour
     public Transform shootPoint;
     public Transform nextPoint;
     public float force = 10f;
- 
+    [SerializeField] private PanelShower _losePanel;
     private Vector2 currentTouch;
     private int currentCandyIndex = 0;
     private GameObject currentCandy;
@@ -147,7 +147,11 @@ public class Shooter : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         if (CandySplineManager.Instance.HasCandies())
+        {
+            if (_losePanel != null) _losePanel.Show();
+            MusicManager.instance.PlayLose();
             Debug.Log("Lose!");
+        }
     }
  
     void RotateShooter()

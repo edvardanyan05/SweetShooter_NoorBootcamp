@@ -7,12 +7,14 @@ using DG.Tweening;
 public class CandySplineManager : MonoBehaviour
 {
     public static CandySplineManager Instance;
+    [SerializeField] private PanelShower _winPanel;
 
     public SplineContainer splineContainer;
     public List<CandyOnSpline> candies;
     public float spacing = 0.03f;
     public float moveSpeed = 0.005f;
     public float closeDuration = 0.3f;
+
 
     void Awake()
     {
@@ -23,9 +25,11 @@ public class CandySplineManager : MonoBehaviour
             candies[i].position = i * spacing;
         }
     }
+    private bool isClosing = false;
 
     void Update()
     {
+        if (isClosing) return;
         foreach (var c in candies)
             c.position += moveSpeed * Time.deltaTime;
     }
@@ -80,11 +84,19 @@ public class CandySplineManager : MonoBehaviour
             candies.RemoveAt(i);
         }
 
+        if (MusicManager.instance != null)
+            MusicManager.instance.PlayPop();
+
+
         if(candies.Count == 0)
         {
+            if (_winPanel != null) _winPanel.Show();
+            MusicManager.instance.PlayWin();
             Debug.Log("Win!");
             return;
         }
+
+        isClosing = true;
 
         Sequence seq = DOTween.Sequence();
 
@@ -105,7 +117,11 @@ public class CandySplineManager : MonoBehaviour
 
         
         int checkIndex = left;
-        seq.OnComplete(() => CheckAndExplode(checkIndex));
+        seq.OnComplete(() =>
+        {
+            isClosing = false;
+            CheckAndExplode(checkIndex);
+        });
     }
 
     public bool HasCandies() => candies.Count > 0;
