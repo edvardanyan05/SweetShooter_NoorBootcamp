@@ -12,7 +12,10 @@ public class Buttons : MonoBehaviour
 
         SourcePanel.Hide(() => 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            int levelNum = SceneManager.GetActiveScene().buildIndex;
+            char num = (char)('0' + levelNum);
+            string str = "Level" + levelNum;
+            SceneTransition.Instance.LoadScene(str);
             
             if (AudioAgain && MusicManager.instance != null)
             {
@@ -26,7 +29,7 @@ public class Buttons : MonoBehaviour
         Time.timeScale = 1f;
         SourcePanel.Hide(() => 
         {
-            SceneManager.LoadScene(0);
+            SceneTransition.Instance.LoadScene("Menu");;
             
             if (AudioAgain && MusicManager.instance != null)
             {
@@ -40,7 +43,10 @@ public class Buttons : MonoBehaviour
         Time.timeScale = 1f;
         SourcePanel.Hide(() => 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int levelNum = SceneManager.GetActiveScene().buildIndex + 1;
+            char num = (char)('0' + levelNum);
+            string str = "Level" + levelNum;
+            SceneTransition.Instance.LoadScene(str);
             
             if (AudioAgain && MusicManager.instance != null)
             {
