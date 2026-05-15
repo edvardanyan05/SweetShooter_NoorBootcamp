@@ -72,11 +72,15 @@ public class Shooter : MonoBehaviour
             }
         }
     }
- 
+
+    private float lastShotTime = 0f;
+    public float shootCooldown = 0.3f;
     void Shoot()
     {
         if (currentCandy == null) return;
- 
+        if (Time.time - lastShotTime < shootCooldown) return;
+        lastShotTime = Time.time;
+
         GameObject bullet = currentCandy;
         Vector3 dir = new Vector3(transform.up.x, transform.up.y, 0f);
         bullet.transform.parent = null;
@@ -111,7 +115,9 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 shootPoint
             );
- 
+            currentCandy.transform.localPosition = Vector3.zero;
+            currentCandy.transform.localRotation = Quaternion.identity;
+
             Rigidbody rb = currentCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
@@ -131,7 +137,9 @@ public class Shooter : MonoBehaviour
                 Quaternion.identity,
                 nextPoint
             );
- 
+            nextCandy.transform.localPosition = Vector3.zero;
+            nextCandy.transform.localRotation = Quaternion.identity;
+
             Rigidbody rb = nextCandy.GetComponent<Rigidbody>();
             if (rb != null)
                 rb.isKinematic = true;
